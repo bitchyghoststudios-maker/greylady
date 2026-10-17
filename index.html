@@ -114,6 +114,18 @@ ol.steps p{color:var(--muted)}
 .rule b{font:500 19px var(--serif);display:block}
 .rule p{color:var(--muted)}
 
+
+/* notify hosts */
+.notify{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:16px;display:grid;gap:10px}
+.notify h3{color:var(--ink)}
+.notify p{color:var(--muted);font-size:15px}
+.notify label{font:400 12px var(--type);color:var(--muted);letter-spacing:.04em}
+.notify input,.notify textarea{width:100%;font:16px var(--sans);padding:10px 12px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink)}
+.notify textarea{min-height:84px;resize:vertical}
+.notify .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.notify .status{font:400 13px var(--type);color:var(--box)}
+.notify .status.err{color:var(--brick)}
+.review{display:inline-flex;margin-top:4px}
 /* checkout */
 .check{background:var(--card);border:1px solid var(--line);border-radius:4px}
 .check label{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:14px 16px;border-top:1px solid var(--line);cursor:pointer;align-items:start}
@@ -297,6 +309,14 @@ footer .sig{font:italic 500 24px/1.3 var(--serif);color:var(--on-band)}
     <label><input type="checkbox" id="c6"><span><b>Key back in the lockbox,</b> and scramble the code</span></label>
   </div>
   <div class="done" id="done">That's everything. Thank you for taking care of her. Safe travels, and we'd love a review.</div>
+  <form class="notify" id="outForm" data-kind="checkout">
+    <h3>Tell us you've left</h3>
+    <p>One tap lets us know the house is empty so we can get it ready. Add a note if anything needs our attention.</p>
+    <label for="outName">YOUR NAME</label><input id="outName" name="name" autocomplete="name" placeholder="Name on the reservation">
+    <label for="outNote">ANYTHING WE SHOULD KNOW? (OPTIONAL)</label><textarea id="outNote" name="note" placeholder="Left a phone charger in the blue room, upstairs shower drips…"></textarea>
+    <div class="row"><button class="btn" type="submit">We've checked out</button><span class="status" id="outStatus" role="status"></span></div>
+    <a class="btn quiet review" href="https://www.airbnb.com/rooms/1592975169871109889" target="_blank" rel="noopener">Loved your stay? Leave us a review</a>
+  </form>
 </div></section>
 
 <section id="eat"><div class="wrap">
@@ -371,6 +391,13 @@ footer .sig{font:italic 500 24px/1.3 var(--serif);color:var(--on-band)}
     <div class="rule"><span class="stamp no">STORM</span><div><b>Tornado warning</b><p>Go to the lowest floor, to an inside room away from windows.</p></div></div>
     <div class="rule"><span class="stamp yes">HOSTS</span><div><b>Anything else</b><p>Message us through Airbnb. A photo helps us fix things faster.</p></div></div>
   </div>
+  <form class="notify" id="fixForm" data-kind="problem">
+    <h3>Something not right?</h3>
+    <p>Tell us here and it goes straight to both of us. For anything urgent, also message us on Airbnb.</p>
+    <label for="fixName">YOUR NAME</label><input id="fixName" name="name" autocomplete="name" placeholder="Name on the reservation">
+    <label for="fixNote">WHAT'S GOING ON?</label><textarea id="fixNote" name="note" required placeholder="Which room, and what happened"></textarea>
+    <div class="row"><button class="btn" type="submit">Send to the hosts</button><span class="status" id="fixStatus" role="status"></span></div>
+  </form>
   <div class="places" id="helpL"></div>
 </div></section>
 </main>
@@ -584,6 +611,25 @@ const paint=()=>{const n=boxes.filter(b=>b.checked).length;document.getElementBy
 try{const s=JSON.parse(localStorage.getItem("gl-checkout")||"[]");boxes.forEach((b,i)=>b.checked=!!s[i]);}catch(_){}
 boxes.forEach(b=>b.addEventListener("change",()=>{save();paint();}));paint();
 
+
+/* notify hosts: emails Jesse + Kristyn through FormSubmit */
+const NOTIFY_TO="jsgrffn@gmail.com", NOTIFY_CC="kristyngriffin20@gmail.com";
+document.querySelectorAll("form.notify").forEach(f=>f.addEventListener("submit",async e=>{
+  e.preventDefault();
+  const kind=f.dataset.kind, st=f.querySelector(".status"), btn=f.querySelector("button[type=submit]");
+  const name=f.querySelector("[name=name]").value.trim(), note=f.querySelector("[name=note]").value.trim();
+  if(kind==="problem"&&!note){st.className="status err";st.textContent="Tell us what's going on first.";return;}
+  btn.disabled=true; st.className="status"; st.textContent="Sending…";
+  const when=new Date().toLocaleString("en-US",{timeZone:"America/New_York",weekday:"short",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+  const body={_subject:(kind==="checkout"?"Grey Lady: guest checked out":"Grey Lady: guest reported a problem")+(name?" ("+name+")":""),
+    _cc:NOTIFY_CC,_template:"table",_captcha:"false",Type:kind==="checkout"?"Checked out":"Problem report",Guest:name||"(no name given)",Note:note||"(no note)",Time:when};
+  try{
+    const r=await fetch("https://formsubmit.co/ajax/"+NOTIFY_TO,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(body)});
+    if(!r.ok) throw new Error(r.status);
+    st.textContent=kind==="checkout"?"Got it. Thanks for staying with us, safe travels!":"Sent. We'll take care of it.";
+    f.querySelectorAll("input,textarea").forEach(i=>i.disabled=true);
+  }catch(_){btn.disabled=false;st.className="status err";st.textContent="Didn't go through. Please message us on Airbnb instead.";}
+}));
 /* highlight current chapter in the nav */
 (function(){const links=[...document.querySelectorAll("nav.toc a")];const map=new Map(links.map(a=>[a.getAttribute("href").slice(1),a]));
   if(!("IntersectionObserver" in window))return;
