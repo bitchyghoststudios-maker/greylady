@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Guest guide for The Grey Lady, a 1910 Victorian Airbnb at 522 S Lee St, Americus, Georgia.">
-<meta property="og:title" content="The Grey Lady Guide"><meta property="og:image" content="grey-lady.jpg">
+<meta property="og:title" content="The Grey Lady Guide"><meta property="og:image" content="https://thegreyladyamericus.com/grey-lady.jpg">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>The Grey Lady Guide</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -185,9 +185,9 @@ ol.steps p{color:var(--muted)}
 .sos code{font:400 16px var(--type)}
 
 /* photo tour */
-.tour{display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,320px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
+.tour{display:grid;grid-auto-flow:column;grid-auto-columns:min(86%,420px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
 .tour figure{margin:0;scroll-snap-align:start;display:grid;gap:6px;cursor:zoom-in}
-.tour img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:3px;display:block;border:4px solid var(--on-band);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.tour img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:3px;display:block;border:4px solid var(--on-band);box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .tour figure.wide img{aspect-ratio:3/4}
 .tour figcaption{font:400 13px var(--type);color:var(--on-band-muted)}
 .tour figcaption b{font:italic 500 17px var(--serif);color:var(--on-band);display:block}
@@ -501,17 +501,21 @@ const HELP = [
  {name:"Urgent care", blurb:"Walk-in clinics near the house.", q:"urgent care", near:true}
 ];
 const TOUR = [
- {src:"rooms/stairs.jpg", t:"The stair hall", c:"Original staircase, front door to landing"},
- {src:"rooms/parlor.jpg", t:"Front parlor", c:"Bay windows and a carved mantel"},
- {src:"rooms/dining.jpg", t:"Formal dining", c:"Seats the whole crew under the chandelier"},
- {src:"rooms/nook.jpg", t:"Breakfast nook", c:"Original stained-glass windows"},
- {src:"rooms/kitchen.jpg", t:"Kitchen", c:"Big island, gas stove, coffee ready"},
- {src:"rooms/bed-bluegray.jpg", t:"Blue-gray bedroom", c:"Queen bed under the oval window"},
- {src:"rooms/bed-teal.jpg", t:"Teal bedroom", c:"Queen bed and an antique mantel"},
- {src:"rooms/bed-sage.jpg", t:"Sage bedroom", c:"Queen bed, soft and quiet"},
- {src:"rooms/bed-taupe.jpg", t:"Taupe bedroom", c:"Queen bed with morning light"},
- {src:"rooms/bed-gray.jpg", t:"Gray bedroom", c:"Queen bed and a leather sofa"},
- {src:"rooms/landing.jpg", t:"Upstairs hall", c:"Heart pine floors, end to end"}
+ {src:"photos/porch.jpg", t:"The wraparound porch", c:"Rockers, swing and the best seat on Lee Street"},
+ {src:"photos/stair-hall.jpg", t:"The stair hall", c:"Original staircase and heart pine floors"},
+ {src:"photos/parlor.jpg", t:"Front parlor", c:"Bay windows and a crystal chandelier"},
+ {src:"photos/dining.jpg", t:"Formal dining", c:"A long table for the whole crew"},
+ {src:"photos/kitchen.jpg", t:"Kitchen", c:"Big island, gas range, coffee ready"},
+ {src:"photos/living.jpg", t:"Family room", c:"Deep sofas and the big TV"},
+ {src:"photos/breakfast.jpg", t:"Breakfast room", c:"Round table under the chandelier"},
+ {src:"photos/bedroom-1.jpg", t:"Bedroom", c:"Queen bed and a carved mantel"},
+ {src:"photos/bedroom-2.jpg", t:"Bedroom", c:"Queen bed under the oval window"},
+ {src:"photos/bedroom-3.jpg", t:"Bedroom", c:"Queen bed and soft sage walls"},
+ {src:"photos/bedroom-4.jpg", t:"Bedroom", c:"Queen bed with morning light"},
+ {src:"photos/bedroom-5.jpg", t:"Bedroom", c:"Queen bed and a leather sofa"},
+ {src:"photos/bath.jpg", t:"Bathroom", c:"Walk-in shower and double vanity"},
+ {src:"photos/porch-2.jpg", t:"More porch", c:"It wraps all the way around"},
+ {src:"photos/aerial.jpg", t:"From above", c:"Lee Street, a short walk from downtown"}
 ];
 /* ================= END EASY EDIT ZONE ================= */
 const HOME="522+S+Lee+St+Americus+GA+31709";
