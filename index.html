@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Guest guide for The Grey Lady, a 1910 Victorian Airbnb at 522 S Lee St, Americus, Georgia.">
+<meta property="og:title" content="The Grey Lady Guide"><meta property="og:image" content="grey-lady.jpg">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>The Grey Lady Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Bodoni+Moda:ital,wght@0,500;1,400;1,500&family=Instrument+Sans:wght@400;500;600;700&family=Courier+Prime&display=swap">
+<style>
+/* Layout: an illustrated house book. Chapters alternate between porch-white pages and slate "clapboard" bands; the turret photo is the cover; ornaments come from the house's own gingerbread trim. */
+:root{
+  --clap:#4e6378;        /* slate clapboard */
+  --clap-ink:#2c3b4a;
+  --rail:#fbfaf6;        /* porch rail white */
+  --paper:#f2f0ea;       /* page */
+  --card:#ffffff;
+  --ink:#1d242c;
+  --muted:#5c6670;
+  --line:#dcd8cd;
+  --brick:#a8452f;       /* chimney */
+  --gold:#b8892f;        /* brass knob */
+  --box:#3f5b3c;         /* boxwood */
+  --chip:#e7e3d8;
+  --on-band:#f4f1ea;
+  --on-band-muted:#c9d3dc;
+  --display:"Rozha One","Bodoni Moda",Georgia,serif;
+  --serif:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --type:"Courier Prime","Courier New",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#16191d;--card:#1f242a;--ink:#ece8df;--muted:#a7aeb5;--line:#323941;--chip:#2a3038;
+  --rail:#1f242a;--clap:#2f3e4d;--clap-ink:#c4d2df;--brick:#d9805f;--gold:#d6a957;--box:#93b48b;
+  --on-band:#ece8df;--on-band-muted:#a9b8c6;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#16191d;--card:#1f242a;--ink:#ece8df;--muted:#a7aeb5;--line:#323941;--chip:#2a3038;
+  --rail:#1f242a;--clap:#2f3e4d;--clap-ink:#c4d2df;--brick:#d9805f;--gold:#d6a957;--box:#93b48b;
+  --on-band:#ece8df;--on-band-muted:#a9b8c6;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--sans)}
+a{color:inherit}
+.wrap{max-width:780px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}
+h2{font:400 clamp(34px,8vw,52px)/1.02 var(--display);letter-spacing:-.01em}
+h3{font:500 22px/1.2 var(--serif)}
+p{margin:0}
+.kicker{font:400 13px/1 var(--type);letter-spacing:.06em;color:var(--brick)}
+.lede{font:italic 400 19px/1.45 var(--serif);color:var(--muted);max-width:56ch}
+.trim{display:block;width:100%;height:14px;color:var(--gold);opacity:.8}
+
+/* ---------- cover ---------- */
+.cover{position:relative;background:#22303d;color:#fff;overflow:hidden}
+.cover img{display:block;width:100%;height:min(78vh,620px);object-fit:cover;object-position:50% 30%}
+.cover .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,24,31,.15) 0%,rgba(18,24,31,0) 30%,rgba(18,24,31,.9) 100%)}
+.cover .title{position:absolute;left:0;right:0;bottom:0;padding-block:0 26px}
+.cover .title .wrap{display:grid;gap:8px}
+.cover .est{font:400 13px var(--type);letter-spacing:.12em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.cover h1{font:400 clamp(58px,15vw,118px)/.88 var(--display);letter-spacing:-.02em;color:#fff}
+.cover h1 i{font:italic 500 .42em var(--serif);display:block;letter-spacing:0;color:#e6dcc5;margin-bottom:.2em}
+.cover p{max-width:36ch;color:#eef1f4;font-size:17px}
+
+/* ---------- ticket strip ---------- */
+.ticket{background:var(--clap);color:var(--on-band)}
+.ticket .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-block:16px;gap:8px}
+.ticket div{display:grid;gap:2px;min-width:0;border-left:1px dashed color-mix(in srgb,var(--on-band) 40%,transparent);padding-left:12px}
+.ticket div:first-child{border-left:0;padding-left:0}
+.ticket b{font:400 26px/1 var(--display);color:var(--on-band)}
+.ticket span{font:400 12px var(--type);color:var(--on-band-muted)}
+@media (max-width:520px){.ticket .wrap{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:14px}.ticket div:nth-child(3){border-left:0;padding-left:0}}
+
+/* ---------- table of contents ---------- */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+nav.toc a{flex:none;text-decoration:none;font:600 14px var(--sans);padding:7px 12px;border-radius:999px;background:var(--chip);color:var(--ink)}
+nav.toc a.on{background:var(--clap);color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ---------- chapters ---------- */
+section{padding-block:52px 40px;scroll-margin-top:56px}
+section>.wrap{display:grid;gap:18px}
+.chapter{display:flex;align-items:baseline;gap:12px}
+.band{background:var(--clap);color:var(--on-band)}
+.band .lede{color:var(--on-band-muted)}
+.band .kicker{color:#f0c9a0}
+.band h3{color:var(--on-band)}
+
+/* arrive */
+.addr{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:12px 14px}
+.addr code{font:400 15px var(--type);flex:1 1 220px;min-width:0}
+.btn{appearance:none;border:0;cursor:pointer;text-decoration:none;font:600 14px var(--sans);padding:9px 14px;border-radius:3px;background:var(--brick);color:#fff;display:inline-flex;gap:6px;align-items:center}
+.btn.quiet{background:var(--chip);color:var(--ink)}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s;border-top:1px solid var(--line)}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:52px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+ol.steps li::before{content:counter(s,upper-roman) ".";font:400 26px/1.1 var(--display);color:var(--brick)}
+ol.steps b{font:500 19px var(--serif);display:block}
+ol.steps p{color:var(--muted)}
+.wifi{border:2px dashed var(--gold);border-radius:4px;padding:14px;font-family:var(--type)}
+
+/* house */
+.rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:color-mix(in srgb,var(--on-band) 25%,transparent);border:1px solid color-mix(in srgb,var(--on-band) 25%,transparent)}
+@media (max-width:600px){.rooms{grid-template-columns:1fr}}
+.room{background:var(--clap);padding:18px;display:grid;gap:6px;align-content:start;min-width:0}
+.room .k{font:400 12px var(--type);color:#f0c9a0;letter-spacing:.06em}
+.room p{color:var(--on-band-muted)}
+
+/* rules */
+.rules{display:grid;gap:10px}
+.rule{display:grid;grid-template-columns:86px 1fr;gap:14px;align-items:start}
+.rule .stamp{font:400 13px var(--type);text-align:center;border:2px solid currentColor;border-radius:3px;padding:6px 4px;transform:rotate(-3deg)}
+.rule .stamp.no{color:var(--brick)} .rule .stamp.yes{color:var(--box)}
+.rule b{font:500 19px var(--serif);display:block}
+.rule p{color:var(--muted)}
+
+/* checkout */
+.check{background:var(--card);border:1px solid var(--line);border-radius:4px}
+.check label{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:14px 16px;border-top:1px solid var(--line);cursor:pointer;align-items:start}
+.check label:first-child{border-top:0}
+.check input{width:22px;height:22px;accent-color:var(--box);margin:2px 0 0}
+.check input:checked+span{color:var(--muted);text-decoration:line-through}
+.progress{display:flex;gap:12px;align-items:center}
+.bar{flex:1;height:10px;background:var(--chip);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--box);transition:width .35s}
+.progress span{font:400 14px var(--type);font-variant-numeric:tabular-nums;color:var(--muted)}
+.done{display:none;background:var(--box);color:#fff;border-radius:4px;padding:16px;font:italic 500 19px var(--serif)}
+.done.show{display:block}
+
+/* places */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{appearance:none;cursor:pointer;font:600 14px var(--sans);padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.band .filters button{background:transparent;color:var(--on-band);border-color:color-mix(in srgb,var(--on-band) 40%,transparent)}
+.filters button[aria-pressed="true"]{background:var(--brick);border-color:var(--brick);color:#fff}
+.places{display:grid;gap:14px}
+.place{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:18px;display:grid;gap:8px;min-width:0}
+.band .place{background:color-mix(in srgb,var(--clap) 70%,#000 30%);border-color:color-mix(in srgb,var(--on-band) 18%,transparent)}
+.band .place p{color:var(--on-band-muted)}
+.band .place .host{color:var(--on-band)}
+.place .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.place .meta{font:400 13px var(--type);color:var(--muted)}
+.band .place .meta{color:var(--on-band-muted)}
+.place .order{font-size:15px}
+.place .order b{font-weight:700}
+.place .host{font:italic 500 18px/1.35 var(--serif);border-left:3px solid var(--gold);padding-left:12px}
+.place .heads{font-size:14px;color:var(--muted)}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+.links a{text-decoration:none;font:600 14px var(--sans);padding:7px 11px;border-radius:3px;background:var(--chip);color:var(--ink)}
+.links a.menu{background:var(--brick);color:#fff}
+.band .links a{background:color-mix(in srgb,var(--on-band) 14%,transparent);color:var(--on-band)}
+.band .links a.menu{background:var(--brick);color:#fff}
+.tag{font:400 12px var(--type);padding:3px 7px;border-radius:2px;background:var(--chip);color:var(--ink)}
+.tag.legend{background:var(--gold);color:#1d242c}
+
+/* history: true chronology */
+.timeline{display:grid;gap:0;border-left:2px solid var(--gold);margin-left:8px}
+.era{position:relative;padding:0 0 26px 22px;display:grid;gap:6px}
+.era::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--gold)}
+.era .yr{font:400 28px/1 var(--display);color:var(--brick)}
+.era p{color:var(--muted);max-width:62ch}
+.era .tag{justify-self:start}
+.era .src{font-size:13px}
+
+/* events */
+.events{display:grid;gap:0;border-top:1px solid var(--line)}
+.ev{display:grid;grid-template-columns:72px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:start}
+.ev .d{text-align:center;border:1px solid var(--line);border-radius:3px;background:var(--card);padding:6px 0}
+.ev .d span{display:block;font:400 11px var(--type);color:var(--brick);letter-spacing:.08em}
+.ev .d b{display:block;font:400 28px/1 var(--display)}
+.ev h3{font-size:19px}
+.ev p{color:var(--muted);font-size:15px}
+.ev a{font-weight:600;font-size:14px}
+.cals{display:flex;flex-wrap:wrap;gap:8px}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:680px){.plans{grid-template-columns:1fr}}
+.plan{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--brick);border-radius:4px;padding:18px;display:grid;gap:8px;align-content:start;min-width:0}
+.plan:nth-child(2){border-top-color:var(--gold)} .plan:nth-child(3){border-top-color:var(--box)}
+.plan ul{margin:0;padding-left:18px;color:var(--muted)}
+
+/* help */
+.sos{background:var(--brick);color:#fff;border-radius:4px;padding:20px;display:grid;gap:6px}
+.sos h3{font:400 34px/1 var(--display);color:#fff}
+.sos code{font:400 16px var(--type)}
+
+/* photo tour */
+.tour{display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,320px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
+.tour figure{margin:0;scroll-snap-align:start;display:grid;gap:6px;cursor:zoom-in}
+.tour img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:3px;display:block;border:4px solid var(--on-band);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.tour figure.wide img{aspect-ratio:3/4}
+.tour figcaption{font:400 13px var(--type);color:var(--on-band-muted)}
+.tour figcaption b{font:italic 500 17px var(--serif);color:var(--on-band);display:block}
+.swipe{font:400 12px var(--type);color:var(--on-band-muted)}
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(10,14,18,.92);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lightbox img{max-width:100%;max-height:82vh;border-radius:3px}
+.lightbox p{color:#eef1f4;font:italic 500 18px var(--serif);margin-top:10px;text-align:center}
+.lightbox button{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px));background:#fff;color:#111;border:0;border-radius:3px;padding:8px 12px;font:600 14px var(--sans);cursor:pointer}
+footer{background:var(--clap);color:var(--on-band-muted);padding-block:44px}
+footer .wrap{display:grid;gap:10px}
+footer .sig{font:italic 500 24px/1.3 var(--serif);color:var(--on-band)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+
+</head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="gb" width="36" height="14" patternUnits="userSpaceOnUse">
+      <path d="M0 1 H36 M0 13 H36" stroke="currentColor" stroke-width="1.2" fill="none"/>
+      <circle cx="18" cy="7" r="3.2" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M0 7 Q9 1 18 7 Q27 13 36 7" fill="none" stroke="currentColor" stroke-width="1"/>
+    </pattern>
+  </defs>
+</svg>
+
+<header class="cover">
+  <img src="grey-lady.jpg" alt="The Grey Lady: a slate-blue 1910 Victorian with a corner turret, oval windows and a wraparound porch">
+  <div class="veil"></div>
+  <div class="title"><div class="wrap">
+    <span class="est">EST. 1910 · 522 SOUTH LEE STREET · AMERICUS, GEORGIA</span>
+    <h1><i>Welcome to</i>The Grey Lady</h1>
+    <p>A turret, a wraparound porch, five queen bedrooms and a whole historic town at your feet. Here's everything you need, from the lockbox to the best lamb gyro in Georgia.</p>
+  </div></div>
+</header>
+
+<div class="ticket"><div class="wrap">
+  <div><span>CHECK IN</span><b>4:00 PM</b></div>
+  <div><span>CHECK OUT</span><b>11:00 AM</b></div>
+  <div><span>BEDROOMS</span><b>5 queens</b></div>
+  <div><span>BATHS</span><b>3½</b></div>
+</div></div>
+
+<nav class="toc" aria-label="Chapters"><div class="wrap" id="tocList">
+  <a href="#arrive">Arrive</a><a href="#house">The house</a><a href="#rules">Rules</a><a href="#checkout">Checkout</a><a href="#eat">Eat</a><a href="#night">After dark</a><a href="#events">Happening</a><a href="#do">Go see</a><a href="#history">History</a><a href="#shop">Shop</a><a href="#plans">Day plans</a><a href="#needs">Errands</a><a href="#help">Help</a>
+</div></nav>
+
+<main>
+<section id="arrive"><div class="wrap">
+  <span class="kicker">CHAPTER ONE</span>
+  <h2>The first ten minutes</h2>
+  <div class="addr">
+    <code id="addr">522 S Lee St, Americus, GA 31709</code>
+    <button class="btn quiet" id="copyAddr" type="button">Copy address</button>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=522+S+Lee+St+Americus+GA+31709" target="_blank" rel="noopener">Open in Maps</a>
+  </div>
+  <ol class="steps">
+    <li><div><b>Park off the street</b><p>Use the paved driveway or the off-street spots. Keep the sidewalk and the neighbors' driveways clear.</p></div></li>
+    <li><div><b>Open the lockbox</b><p>Your code is in your Airbnb arrival message. We never post it online.</p></div></li>
+    <li><div><b>Get on the Wi-Fi</b><p>Details are on the card by the QR code, and here when they're live.</p><div class="wifi" id="wifiBox" hidden></div></div></li>
+    <li><div><b>Set the temperature</b><p>Pick a comfortable setting and keep the outside doors shut while the heat or air runs. Old houses lose air fast.</p></div></li>
+    <li><div><b>Find the porch</b><p>Grab a chair. It's the best seat on Lee Street, and that's the whole point.</p></div></li>
+  </ol>
+</div></section>
+
+<section id="house" class="band"><div class="wrap">
+  <span class="kicker">CHAPTER TWO</span>
+  <h2>How the house works</h2>
+  <p class="lede">She's 116 years old, with modern systems behind original doors, floors and hardware. Be gentle and she'll be good to you.</p>
+  <span class="swipe">SWIPE THE TOUR · TAP A PHOTO TO ENLARGE →</span>
+  <div class="tour" id="tour"></div>
+  <div class="rooms">
+    <div class="room"><span class="k">KITCHEN</span><h3>Cook like you live here</h3><p>Gas stove, full fridge, cookware and a coffee maker. Wash or load your dishes, and never leave the stove unattended.</p></div>
+    <div class="room"><span class="k">BEDROOMS</span><h3>Five queens</h3><p>Every bedroom has a queen bed, and the couches take the overflow. Keep to the guest count on your reservation.</p></div>
+    <div class="room"><span class="k">BATHROOMS</span><h3>Three and a half</h3><p>Old pipes are fussy. Only toilet paper goes in the toilets. Wipes and everything else go in the trash.</p></div>
+    <div class="room"><span class="k">HEAT &amp; AIR</span><h3>Comfortable, not arctic</h3><p>Reasonable settings keep every floor even. Keep the outside doors closed while it runs.</p></div>
+    <div class="room"><span class="k">FIREPLACES</span><h3>For looks only</h3><p>They're decorative. No fires, candles or incense anywhere in the house.</p></div>
+    <div class="room"><span class="k">ANTIQUES</span><h3>Easy does it</h3><p>Don't force old doors, locks or hardware. If something sticks, message us and we'll walk you through it.</p></div>
+    <div class="room"><span class="k">LOCKED DOORS</span><h3>Owner storage</h3><p>A few doors, including the laundry room and some closets, are locked. Everything you need is open to you.</p></div>
+    <div class="room"><span class="k">THE PORCH</span><h3>Sit a while</h3><p>Morning coffee or evening drinks. Bring food in when you're done so you don't feed the critters.</p></div>
+  </div>
+</div></section>
+
+<section id="rules"><div class="wrap">
+  <span class="kicker">CHAPTER THREE</span>
+  <h2>House rules</h2>
+  <div class="rules">
+    <div class="rule"><span class="stamp no">NO</span><div><b>Parties or events</b><p>Registered guests only, overnight included.</p></div></div>
+    <div class="rule"><span class="stamp no">NO</span><div><b>Smoking or open flame</b><p>No smoking or vaping inside, and no candles, incense or fireplace fires.</p></div></div>
+    <div class="rule"><span class="stamp no">NO</span><div><b>Pets</b><p>We love them, but the house isn't set up for them.</p></div></div>
+    <div class="rule"><span class="stamp yes">PLEASE</span><div><b>Keep it down late</b><p>Lee Street is a neighborhood, and voices carry off a porch at night and early morning.</p></div></div>
+    <div class="rule"><span class="stamp yes">PLEASE</span><div><b>Watch the little ones</b><p>The stairs and railings are original and steep.</p></div></div>
+    <div class="rule"><span class="stamp yes">PLEASE</span><div><b>Tell us if something breaks</b><p>It happens. Send a photo through Airbnb and we'll take care of it.</p></div></div>
+  </div>
+</div></section>
+
+<section id="checkout" class="band"><div class="wrap">
+  <span class="kicker">CHAPTER FOUR</span>
+  <h2>Checkout by 11</h2>
+  <p class="lede">Tap them off as you go. Your progress saves on this phone.</p>
+  <div class="progress"><div class="bar"><i id="bar"></i></div><span id="count" style="color:var(--on-band-muted)">0 of 6</span></div>
+  <div class="check" id="checklist" style="color:var(--ink)">
+    <label><input type="checkbox" id="c1"><span><b>Sweep every room:</b> chargers, drawers, closets, showers</span></label>
+    <label><input type="checkbox" id="c2"><span><b>Towels in the tub</b> in each bathroom</span></label>
+    <label><input type="checkbox" id="c3"><span><b>Dishes washed or loaded</b> and counters wiped</span></label>
+    <label><input type="checkbox" id="c4"><span><b>Trash bagged and out</b> in the outside bin</span></label>
+    <label><input type="checkbox" id="c5"><span><b>Lights off, doors locked,</b> front and back</span></label>
+    <label><input type="checkbox" id="c6"><span><b>Key back in the lockbox,</b> and scramble the code</span></label>
+  </div>
+  <div class="done" id="done">That's everything. Thank you for taking care of her. Safe travels, and we'd love a review.</div>
+</div></section>
+
+<section id="eat"><div class="wrap">
+  <span class="kicker">CHAPTER FIVE · DOWNTOWN IS A SHORT WALK</span>
+  <h2>Where to eat</h2>
+  <p class="lede">What to order, straight from people who've eaten there. Small-town hours shift, so tap Maps for today's.</p>
+  <div class="filters" id="eatF" role="group" aria-label="Filter restaurants"></div>
+  <div class="places" id="eatL"></div>
+</div></section>
+
+<section id="night" class="band"><div class="wrap">
+  <span class="kicker">CHAPTER SIX</span>
+  <h2>After dark</h2>
+  <p class="lede">A small town does nights its own way: a veranda drink above Lamar Street, live music on the corner, a bourbon tasting, a show at the Rylander.</p>
+  <div class="places" id="nightL"></div>
+</div></section>
+
+<section id="events"><div class="wrap">
+  <span class="kicker">CHAPTER SEVEN · UPDATED WEEKLY</span>
+  <h2>Happening around town</h2>
+  <p class="lede">Past events drop off this list automatically. Always confirm times on the event's own page.</p>
+  <div class="events" id="evL"></div>
+  <p class="kicker" style="color:var(--muted)">LIVE CALENDARS</p>
+  <div class="cals links" id="calL"></div>
+</div></section>
+
+<section id="do" class="band"><div class="wrap">
+  <span class="kicker">CHAPTER EIGHT</span>
+  <h2>Go see</h2>
+  <p class="lede">Two presidents' worth of history within 15 minutes, a Civil War site every American should see once, and Georgia's Little Grand Canyon an hour out.</p>
+  <div class="filters" id="doF" role="group" aria-label="Filter places"></div>
+  <div class="places" id="doL"></div>
+</div></section>
+
+<section id="history"><div class="wrap">
+  <span class="kicker">CHAPTER NINE</span>
+  <h2>Stories from around here</h2>
+  <p class="lede">True history and a few local legends. We've marked which is which.</p>
+  <div class="timeline" id="histL"></div>
+</div></section>
+
+<section id="shop" class="band"><div class="wrap">
+  <span class="kicker">CHAPTER TEN</span>
+  <h2>Shop downtown</h2>
+  <p class="lede">Locally owned shops a few blocks from the porch. Most close Sundays, and some close Mondays too.</p>
+  <div class="places" id="shopL"></div>
+</div></section>
+
+<section id="plans"><div class="wrap">
+  <span class="kicker">CHAPTER ELEVEN</span>
+  <h2>Pick a day</h2>
+  <div class="plans">
+    <div class="plan"><span class="kicker">SLOW MORNING</span><h3>Downtown on foot</h3><ul><li>Doughnuts and breakfast at Baker's Dozen (go early)</li><li>Butter pecan coffee at Horne Pecan</li><li>Walk into the Windsor's atrium lobby and look up</li><li>Kinnebrew, Fox and Fowler, Topiaries</li><li>Lamb gyro at Gyro City, then Scoops</li></ul></div>
+    <div class="plan"><span class="kicker">HALF DAY · 15 MIN WEST</span><h3>Carter country</h3><ul><li>Plains High School museum</li><li>The 1976 campaign depot</li><li>The Boyhood Farm in Archery</li><li>Pay respects at the Carters' gravesite</li><li>Back for steak night at The Station</li></ul></div>
+    <div class="plan"><span class="kicker">FULL DAY</span><h3>Andersonville + Koinonia</h3><ul><li>Morning at the POW Museum and prison site</li><li>Walk the national cemetery</li><li>Pecans and Cotton Patch Gospel books at Koinonia</li><li>Bourbon tasting at Thirteenth Colony</li><li>Veranda drinks at Floyd's</li></ul></div>
+  </div>
+</div></section>
+
+<section id="needs" class="band"><div class="wrap">
+  <span class="kicker">CHAPTER TWELVE</span>
+  <h2>Forgot something?</h2>
+  <p class="lede">Each link opens Maps with the closest options to the house, with live hours.</p>
+  <div class="places" id="needL"></div>
+</div></section>
+
+<section id="help"><div class="wrap">
+  <span class="kicker">JUST IN CASE</span>
+  <h2>Help &amp; safety</h2>
+  <div class="sos"><h3>Emergency? Call 911.</h3><p>Give the address: <code>522 South Lee Street, Americus, GA 31709</code></p></div>
+  <div class="rules">
+    <div class="rule"><span class="stamp no">FIRE</span><div><b>Alarm, smoke, or you smell gas</b><p>Get everyone out first, then call 911 from outside. Don't go back in.</p></div></div>
+    <div class="rule"><span class="stamp no">STORM</span><div><b>Tornado warning</b><p>Go to the lowest floor, to an inside room away from windows.</p></div></div>
+    <div class="rule"><span class="stamp yes">HOSTS</span><div><b>Anything else</b><p>Message us through Airbnb. A photo helps us fix things faster.</p></div></div>
+  </div>
+  <div class="places" id="helpL"></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <svg class="trim" aria-hidden="true"><rect width="100%" height="14" fill="url(#gb)"/></svg>
+  <p class="sig">Built in 1910, she's watched more than a century of Americus go by this corner of Lee Street. Thanks for being part of her story.</p>
+  <p>The Grey Lady · Americus, Georgia. If anything here differs from your Airbnb reservation or messages, those come first.</p>
+</div></footer>
+
+<script>
+/* ================= EASY EDIT ZONE =================
+   host: your own words (shown as "Hosts' take").  order: what reviewers say to get.
+   menu: menu link.  q: what to search in Google Maps.  Events: date as YYYY-MM-DD (past ones hide themselves). */
+const WIFI = { name:"", password:"" };
+
+const EAT = [
+ {name:"Baker's Dozen Donuts & Diner", kind:"Breakfast & lunch", meta:"130 Cotton Ave · Mon–Fri 6–3, Sat 7–3", blurb:"A retro 1950s diner that opened in March 2026, the first doughnut shop in Americus in 25 years. Doughnuts are made fresh every morning, plus a full breakfast and lunch menu.", order:"", host:"Great doughnuts, but honestly it's our favorite food in town right now. Get breakfast or lunch, not just doughnuts.", heads:"Lines can run long, especially early.", menu:"https://www.facebook.com/baker.s.dozen.americus/", site:"https://bakersdozendonutsanddiner.com/", q:"Baker's Dozen Donuts and Diner 130 Cotton Ave Americus GA"},
+ {name:"The Station", kind:"Dinner", meta:"222 W Lamar St · $$$", blurb:"Downtown's steak-and-seafood house, with a full bar in a historic Lamar Street building.", order:"<b>Order:</b> fried cheese grits, stuffed shrimp, the ribeye or blackened grouper, lamb lollipops, crème brûlée.", host:"One of the best restaurants in town.", heads:"Dinner hours vary by listing. Call (229) 931-5398.", menu:"https://www.facebook.com/p/The-Station-100063802142450/", q:"The Station 222 W Lamar St Americus GA"},
+ {name:"The 1800", kind:"Dinner", meta:"329 W Lamar St · 7 days, 11–10", blurb:"A family-owned Mexican place with big plates, a good-looking room and live music some nights.", order:"<b>Order:</b> the Americus Fajitas, a molcajete, shrimp tacos, a margarita, and tres leches or flan.", host:"One of our favorites.", menu:"https://www.instagram.com/the1800official/", site:"https://www.facebook.com/p/The-1800-Mexican-Restaurant-100083027186304/", q:"The 1800 Mexican Restaurant 329 W Lamar St Americus GA"},
+ {name:"Monroe's Hot Dogs & Billiards", kind:"Breakfast & lunch", meta:"318 W Lamar St · $", blurb:"An Americus institution. The slogan is \"Best Dog Ever Bitten By A Man,\" and the same family has run it for about 35 years. Steamed buns, homemade chili, cheap prices, a pool table, and a crowd at lunch.", order:"<b>Order:</b> the Combo Dog (chili and slaw). The slaw is the move.", host:"Famous around here. You have to try it once.", q:"Monroe's Hot Dogs and Billiards 318 W Lamar St Americus GA"},
+ {name:"Pat's Place", kind:"Dinner", meta:"1526 S Lee St · same street as the house · since 1980", blurb:"Americus's favorite neighborhood pub for 46 years, near Georgia Southwestern. Owner Pat Spann still opens most mornings. Pizza, sandwiches, wings, nachos and plenty of beer.", order:"<b>Order:</b> Pat's Supreme or the chicken bacon ranch pizza, or the Italian sandwich. Oyster nights on fall Wednesdays.", host:"A local legend. Everybody's been to Pat's.", q:"Pat's Place 1526 S Lee St Americus GA"},
+ {name:"IceHouse Beer Garden", kind:"Dinner", meta:"533 W Forsyth St · $$", blurb:"Burgers, grilled cheese, wings and rice bowls in a restored 1912 ice warehouse with a big outdoor yard and live music. Great for a group.", order:"<b>Order:</b> the Iceberger, the jalapeño popper grilled cheese, corn ribs.", menu:"https://toast.app/r/icehouse-beer-garden-533-west-forsyth-street/order", q:"IceHouse Beer Garden 533 W Forsyth St Americus GA"},
+ {name:"Rosemary & Thyme", kind:"Dinner", meta:"Windsor Hotel · 125 W Lamar St · $$$", blurb:"The Windsor's dining room. Seasonal modern American food on the original tile floor of an 1892 hotel. Breakfast daily, dinner Monday through Saturday.", order:"<b>Order:</b> the pimento cheese fritters, the restaurant's best-known dish.", menu:"https://www.windsor-americus.com/eat-drink/rosemary-thyme/", q:"Rosemary and Thyme Windsor Hotel Americus GA"},
+ {name:"Gyro City Mediterranean Grill", kind:"Lunch", meta:"116 W Lamar St · Mon–Sat 11–8 · $", blurb:"A family-friendly counter with some of the best reviews in town.", order:"<b>Order:</b> the lamb gyro (one reviewer called it the best in Georgia), loaded fries, hummus.", menu:"https://www.facebook.com/p/Gyro-City-Mediterranean-Grill-100037338476023/", q:"Gyro City Mediterranean Grill 116 W Lamar St Americus GA"},
+ {name:"Toboggan Steve's", kind:"Dinner", meta:"102 W Lamar St · $", blurb:"A lively corner pub and sports bar with live music most Friday and Saturday nights and bingo on Thursdays.", order:"<b>Order:</b> lemon-pepper wings (Wing Wednesday) and the black-and-blue burger.", heads:"Often closed Monday and Tuesday. Call (229) 380-0851.", menu:"https://www.zmenu.com/toboggan-steves-americus-online-menu/", q:"Toboggan Steve's 102 W Lamar St Americus GA"},
+ {name:"Sweet Georgia Bakery & Cafe", kind:"Breakfast & lunch", meta:"134 W Lamar St", blurb:"A Lamar Street favorite for 15 years, just renovated, with a new savory menu, dinner and pan pizzas alongside the from-scratch bakery.", order:"<b>Order:</b> the hot turkey sandwich (their best seller), almond cake or carrot cake.", heads:"Call ahead: (229) 380-0439.", menu:"https://www.facebook.com/sweetgabakerycafe/", site:"https://sweetgabakerycafe.com/", q:"Sweet Georgia Bakery and Cafe 134 W Lamar St Americus GA"},
+ {name:"Little Brother's Bistro", kind:"Breakfast & lunch", meta:"W Lamar St · weekday lunch", blurb:"A quick, inexpensive downtown lunch since about 2009: soups, salads, sandwiches and paninis, with friendly staff.", heads:"Lunch only. Call (229) 924-6944.", menu:"https://www.facebook.com/littlebrothersbistro/", site:"https://www.littlebrosbistro.com/", q:"Little Brother's Bistro Americus GA"},
+ {name:"Horne Pecan Company Coffee Shop", kind:"Coffee & sweets", meta:"103 N Jackson St · by the Windsor", blurb:"The coffee bar and shop of Horne Pecan, a family pecan farm just outside town, in the old Wolf Creek spot by the Windsor. Take home a bag of their pecans.", order:"<b>Order:</b> the butter pecan coffee. Regulars say every cup comes with a handwritten Bible verse.", host:"Fantastic coffee, honestly. Our go-to.", q:"Horne Pecan Company Retail and Coffee Shop 103 N Jackson St Americus GA"},
+ {name:"Cafe Campesino Coffeehouse", kind:"Coffee & sweets", meta:"510 W Forsyth St · daily 7–2", blurb:"The coffeehouse next to an Americus roaster that has done 100% organic, fair-trade coffee since 1998. Grab a bag of beans to take home.", menu:"https://cafecampesinocoffeehouse.com/#menu", q:"Cafe Campesino Coffeehouse 510 W Forsyth St Americus GA"},
+ {name:"Scoops", kind:"Coffee & sweets", meta:"122 N Jackson St · open till 9–10", blurb:"An old-school ice cream and candy shop: 32 homemade flavors, candy by the pound, and hand-dipped caramel apples and chocolate strawberries.", host:"A cool ice cream shop, perfect after dinner.", menu:"https://www.scoopsicecream.com/americus", q:"Scoops ice cream 122 N Jackson St Americus GA"}
+];
+
+const NIGHT = [
+ {name:"Floyd's Pub", meta:"Windsor Hotel, 2nd floor", blurb:"Dinner, wine and cocktails, with rocking chairs on a veranda over Lamar Street. It's named for Floyd Lowery, the Windsor's bellman for about 50 years, who some say still makes his rounds.", order:"<b>Do this:</b> get a veranda rocker at sunset.", menu:"https://www.windsor-americus.com/eat-drink/floyds-pub/", q:"Floyd's Pub Windsor Hotel Americus GA"},
+ {name:"The Alley Bar", meta:"Windsor Hotel, 1st floor · Thu–Sat", blurb:"The Windsor's casual sports bar, with the game on, weekly live music and trivia nights.", menu:"https://www.windsor-americus.com/eat-drink/the-alley-bar/", q:"The Alley Bar Windsor Hotel Americus GA"},
+ {name:"Toboggan Steve's", meta:"102 W Lamar St", blurb:"Live music most Friday and Saturday nights on the corner of Lamar Street.", q:"Toboggan Steve's 102 W Lamar St Americus GA"},
+ {name:"IceHouse Beer Garden", meta:"533 W Forsyth St · opened summer 2026", blurb:"Americus's newest spot, in the 1912 Atlantic Ice and Coal warehouse: exposed brick and beams, a bar built from old bowling-alley wood, and a 4,000 sq ft outdoor yard with a live-music stage and games. Craft beer and cocktails, and family-friendly.", order:"<b>Order:</b> the Iceberger or smashburger, corn ribs, pimento cheese and grits, boiled peanuts.", host:"Just opened, and worth checking out.", heads:"Mon–Wed 4–9 pm · Thu 11–10 · Fri–Sat 11–11 · Sun 11–7 · (229) 337-2070", menu:"https://toast.app/r/icehouse-beer-garden-533-west-forsyth-street/order", q:"IceHouse Beer Garden 533 W Forsyth St Americus GA"},
+ {name:"Pat's Place", meta:"1526 S Lee St · since 1980", blurb:"The town's favorite pub for 46 years, with live music and trivia on some nights, oysters on fall Wednesdays, and cold beer.", q:"Pat's Place 1526 S Lee St Americus GA"},
+ {name:"Thirteenth Colony Distilleries", meta:"305 N Dudley St · Tue–Sat · 21+", blurb:"Americus's small-batch distillery, making bourbon (try the 113-proof maple finish), rye, gin and vodka. A tour and tasting is $20, or $15 for the tasting only.", site:"https://www.13thcolonydistillery.com", q:"Thirteenth Colony Distilleries 305 N Dudley St Americus GA"},
+ {name:"Rylander Theatre", meta:"310 W Lamar St", blurb:"A 1921 vaudeville palace with a 1928 pipe organ. Check what's playing while you're in town, from concerts and films to Sumter Players shows.", order:"<b>Do this:</b> check the calendar first thing. A show here is the best night in Americus.", site:"https://www.rylander.org/", q:"Rylander Theatre 310 W Lamar St Americus GA"},
+ {name:"First Friday", meta:"First Friday of every month", blurb:"Downtown gets busy with free live music and later hours at the bars and shops.", site:"https://www.downtownamericus.com/events/", q:"Downtown Americus GA"}
+];
+
+const EVENTS = [
+ {d:"2026-10-17", t:"SAM Shortline Sumter Explorer train", v:"Departs Georgia Veterans State Park, Cordele · 10 am", u:"https://www.samshortline.com/"},
+ {d:"2026-10-22", t:"Haunted History Tour", v:"Americus Visitor Center, 101 W Lamar St · 7:30 pm (also Oct 24, 26, 28, 31)", u:"https://visitamericusga.com/local-area-events/"},
+ {d:"2026-10-24", t:"SAM Shortline Sumter Explorer train", v:"Departs Georgia Veterans State Park · 10 am", u:"https://www.samshortline.com/"},
+ {d:"2026-10-25", t:"Jazz Goes to Church", v:"Calvary Episcopal, 408 S Lee St, one block from the porch · 4 pm", u:"https://visitamericusga.com/local-area-events/"},
+ {d:"2026-10-29", t:"Kiwanis Pet Parade + Downtown Trick-or-Treat", v:"Jackson St downtown · parade 4 pm, trick-or-treat 5–7 pm", u:"https://www.downtownamericus.com/events/"},
+ {d:"2026-10-30", t:"Film premiere: Shadowed", v:"Rylander Theatre", u:"https://www.rylander.org/"},
+ {d:"2026-10-31", t:"SAM Shortline Halloween Express to Plains", v:"Departs Georgia Veterans State Park", u:"https://www.samshortline.com/halloweenexpress"},
+ {d:"2026-11-06", t:"First Friday: Downtown Tailgate & Bar Fight", v:"Downtown Americus · 5–8 pm", u:"https://www.downtownamericus.com/events/"},
+ {d:"2026-11-07", t:"SAM Shortline Wine and Cheese Train", v:"Departs Georgia Veterans State Park", u:"https://www.samshortline.com/wine-and-cheese-train"},
+ {d:"2026-11-07", t:"WWI & WWII commemorative weekend", v:"Andersonville National Historic Site · Nov 7–8", u:"https://visitamericusga.com/local-area-events/"},
+ {d:"2026-11-13", t:"Jason Crabb in concert", v:"Rylander Theatre · GRAMMY and Dove Award-winning gospel singer", u:"https://www.rylander.org/"},
+ {d:"2026-11-19", t:"Holiday Open House + tree lighting", v:"Downtown · 5–8 pm · Santa, carriage rides, the big tree lighting", u:"https://www.downtownamericus.com/events/"},
+ {d:"2026-11-27", t:"Shop Small Weekend", v:"Downtown shops · Nov 27–28", u:"https://www.downtownamericus.com/events/"},
+ {d:"2026-11-21", t:"Murder Mystery Dinner Train", v:"Departs Americus Depot, 329 S Jackson St", u:"https://www.samshortline.com/murdermysterdinnertrain"},
+ {d:"2026-11-28", t:"Plains Christmas Lighting train (Santa aboard)", v:"Americus flag stop 5:15 pm · 2-hour layover in Plains", u:"https://www.samshortline.com/plainschristmaslighting"},
+ {d:"2026-11-30", t:"Photos with Santa", v:"The Windsor Hotel · 5:30 pm", u:"https://visitamericusga.com/local-area-events/"},
+ {d:"2026-12-03", t:"Americus Christmas Parade", v:"Downtown, Forsyth St to Lamar St · 7 pm · 70+ entries", u:"https://www.downtownamericus.com/events/"},
+ {d:"2026-12-04", t:"First Friday downtown", v:"Downtown Americus · 5–8 pm", u:"https://www.downtownamericus.com/events/"},
+ {d:"2026-12-12", t:"Downtown Sidewalk Sale", v:"Downtown shops · 10 am–2 pm", u:"https://www.downtownamericus.com/events/"},
+ {d:"2026-12-06", t:"Handel's Messiah (free)", v:"First Methodist, 200 S Lee St, up the street · 5 pm", u:"https://visitamericusga.com/local-area-events/"},
+ {d:"2026-12-10", t:"Sumter Players: It's a Wonderful Life", v:"Dec 10–12 at 7 pm, Dec 13 at 2:30 pm", u:"https://www.sumterplayers.org/thisseason"},
+ {d:"2027-02-05", t:"First Friday downtown (confirm)", v:"Downtown Americus", u:"https://www.downtownamericus.com/events/"},
+ {d:"2027-03-11", t:"Sumter Players: Hairspray", v:"Mar 11–13 at 7 pm, Mar 14 at 2:30 pm", u:"https://www.sumterplayers.org/thisseason"}
+];
+const CALENDARS = [
+ {n:"Rylander Theatre", u:"https://www.rylander.org/"},
+ {n:"Visit Americus events", u:"https://visitamericusga.com/local-area-events/"},
+ {n:"Downtown Americus", u:"https://www.downtownamericus.com/events/"},
+ {n:"Sumter Players", u:"https://www.sumterplayers.org/thisseason"},
+ {n:"SAM Shortline trains", u:"https://www.samshortline.com/"},
+ {n:"Andersonville events", u:"https://www.nps.gov/ande/planyourvisit/calendar.htm"},
+ {n:"Carter park events", u:"https://www.nps.gov/jica/planyourvisit/calendar.htm"}
+];
+
+const DO = [
+ {name:"Jimmy Carter National Historical Park", kind:"Carter country", meta:"Plains · about 15 min · free", blurb:"Start at Plains High School, where both Jimmy and Rosalynn went to school and which is now the museum. Then see the depot that was his 1976 campaign headquarters and the Boyhood Farm in Archery, restored to the 1930s. The Carters' gravesite opened to visitors in July 2025.", heads:"Visitor desk 9:30–4:30 daily.", site:"https://www.nps.gov/jica/index.htm", q:"Plains High School Visitor Center Jimmy Carter National Historical Park"},
+ {name:"Maranatha Baptist Church", kind:"Carter country", meta:"Plains", blurb:"The small church where President Carter taught Sunday school for decades, drawing visitors from around the world. Sunday school continues, taught by his niece.", heads:"It's an active church. Check service times first.", site:"https://mbcplains.org", q:"Maranatha Baptist Church Plains GA"},
+ {name:"The Smiling Peanut", kind:"Carter country", meta:"122 GA-45 N, Plains · free", blurb:"A 13-foot grinning peanut built for Carter's 1976 campaign, and supposedly the most photographed thing in Plains. The Billy Carter Gas Station Museum, his famous brother's old station, is less than a mile away.", order:"<b>Do this:</b> get the group photo.", q:"Smiling Peanut statue 122 GA-45 N Plains GA"},
+ {name:"Lindbergh's first solo flight", kind:"History", meta:"Jimmy Carter Regional Airport · about 10 min", blurb:"Those historical-marker signs you see around town are for Charles Lindbergh. He bought his first airplane and made his first solo flight here at Souther Field in May 1923, four years before he crossed the Atlantic. A 7-foot bronze statue of him wing-walking stands at the airport beside the state marker.", q:"Lindbergh statue Jimmy Carter Regional Airport Americus GA"},
+ {name:"Andersonville National Historic Site", kind:"History", meta:"About 20 min · free", blurb:"Three places in one: the National Prisoner of War Museum, the Camp Sumter prison site where nearly 13,000 Union soldiers died, and a national cemetery that's still active. Moving, and worth the trip.", heads:"Museum 9:30–4:30. No food on site. Bring a jacket, the museum runs cold.", site:"https://www.nps.gov/ande/", q:"Andersonville National Historic Site 496 Cemetery Rd"},
+ {name:"Koinonia Farm", kind:"History", meta:"Just outside town", blurb:"The 1942 interracial farm community where Habitat for Humanity was born. Shop pecans and pecan treats at the welcome center, walk the orchard trails, and pick up Clarence Jordan's Cotton Patch Gospel books.", heads:"Call ahead: (229) 924-0391.", site:"https://www.koinoniafarm.org", q:"Koinonia Farm 1324 GA Hwy 49 S Americus GA"},
+ {name:"The Windsor Hotel", kind:"In town", meta:"125 W Lamar St", blurb:"The 1892 landmark downtown. Walk in even if you're not staying there: the three-story Moorish-arched atrium lobby is the showpiece.", site:"https://www.windsor-americus.com/", q:"Windsor Hotel 125 W Lamar St Americus GA"},
+ {name:"Rylander Theatre", kind:"In town", meta:"310 W Lamar St", blurb:"A restored 1921 vaudeville and movie palace, with a hall named for Jimmy Carter and a 1928 pipe organ. See what's playing.", heads:"Box office (229) 931-0001.", site:"https://www.rylander.org/", q:"Rylander Theatre Americus GA"},
+ {name:"SAM Shortline Excursion Train", kind:"Outdoors", meta:"Cordele, Americus, Plains", blurb:"Vintage rail cars through the countryside, with wine-and-cheese, murder-mystery and Christmas runs. Some trips stop in Americus.", site:"https://www.samshortline.com/", q:"SAM Shortline Excursion Train Cordele GA"},
+ {name:"Georgia Veterans State Park", kind:"Outdoors", meta:"Lake Blackshear · about 30 min · $5", blurb:"A lakeside park with an outdoor military museum (including a B-29), boating, fishing and an 18-hole golf course.", site:"https://gastateparks.org/GeorgiaVeterans", q:"Georgia Veterans State Park Cordele GA"},
+ {name:"Providence Canyon State Park", kind:"Outdoors", meta:"About 1 hr · $5", blurb:"\"Georgia's Little Grand Canyon\": gullies up to 150 feet deep in pink, orange and purple soil. Walk the rim for the overlooks, or hike down to the canyon floor.", heads:"Stay behind the fences, the edges crumble.", site:"https://gastateparks.org/ProvidenceCanyon", q:"Providence Canyon State Park Lumpkin GA"}
+];
+
+const HISTORY = [
+ {yr:"1832", t:"Americus is born", x:"The town was laid out and incorporated in 1832, supposedly named for Amerigo Vespucci. The railroad arrived in 1854, and Americus became a cotton market town that grew twentyfold in ten years."},
+ {yr:"1864", t:"Fire, then the brick boom", x:"A fire in August 1864 burned most of downtown. The rebuild in brick, through a late-1800s boom, is the Lamar Street you walk today: Glover's Opera House (1882), the Windsor (1892), the Carnegie Library (1908)."},
+ {yr:"1864–65", t:"Andersonville", x:"Eleven miles away, Camp Sumter was the largest and deadliest Confederate prison of the Civil War. About 45,000 Union soldiers were held there and nearly 13,000 died. Because Clara Barton and a former prisoner secretly copied the death records, only 460 graves are marked unknown."},
+ {yr:"1892", t:"The Windsor opens", x:"It was built to lure Northern winter visitors. Guests included William Jennings Bryan and John L. Sullivan, and Franklin D. Roosevelt spoke from the balcony in 1928. Its bellman Floyd Lowery ran the elevator for about 50 years. Floyd's Pub is named for him, and staff say he still makes his rounds."},
+ {yr:"Legend", legend:true, t:"The Capone Suite", x:"Ask anyone in Americus and they'll tell you Al Capone stayed at the Windsor whenever he passed through, often enough that the tower suite is still called the Capone Suite. The story goes that he slept up there with an armed bodyguard at the foot of its private staircase, and some locals will even tell you he kept a little place outside town. Nothing's in writing (the hotel says it might have been John Dillinger), but around here it's common knowledge. You can book the suite yourself and decide."},
+ {yr:"Legend", legend:true, t:"Tunnels under downtown", x:"You'll hear about secret tunnels beneath Americus. No record, dig or news story has turned one up. What's real: the Windsor has a hidden staircase behind a door. Ask at the Haunted History Tour."},
+ {yr:"1910", t:"The Grey Lady is built", x:"Your house went up on Lee Street, the old Starksville Road and still the spine of the historic district. A block north, Calvary Episcopal (1921) was designed by Ralph Adams Cram, the architect of New York's Cathedral of St. John the Divine."},
+ {yr:"1921", t:"The Rylander opens", x:"Walter Rylander's theater opened with the play Lightnin' and showed vaudeville and films. It went dark in 1951 and came back after a multimillion-dollar restoration in the 1990s."},
+ {yr:"1923", t:"Lindbergh learns to fly", x:"Charles Lindbergh bought his first airplane and made his first solo flight at Souther Field in Americus."},
+ {yr:"1942", t:"Koinonia Farm", x:"Clarence Jordan founded an interracial Christian farm outside town in the Jim Crow South. It survived bombings and a decade-long boycott by selling pecans by mail, which it still does today."},
+ {yr:"1976", t:"Habitat for Humanity", x:"Out of Koinonia's housing program, Millard and Linda Fuller founded Habitat for Humanity International here. Its operational headquarters is still downtown at 322 W Lamar St. Jimmy and Rosalynn Carter led its yearly build for more than 35 years."},
+ {yr:"1946", t:"The Carters' big town", x:"Americus was the Carters' big town, 10 miles from Plains. Jimmy took engineering classes at Georgia Southwestern in 1941, and Rosalynn graduated there in 1946. The Rosalynn Carter Institute for Caregivers was founded at GSW in 1987."},
+ {yr:"2024", t:"Coming home to Plains", x:"Jimmy Carter died December 29, 2024, at 100. He's buried beside Rosalynn in Plains, and the gravesite opened to visitors in July 2025."}
+].sort((a,b)=> (isNaN(a.yr.slice(0,4))?1e9:+a.yr.slice(0,4)) - (isNaN(b.yr.slice(0,4))?1e9:+b.yr.slice(0,4)));
+
+const SHOP = [
+ {name:"The Kinnebrew Company", meta:"208 W Lamar St · since 1947", blurb:"A family clothier for men and women: clothes, shoes, accessories and gifts. A classic small-town Southern outfitter.", host:"A must-stop.", heads:"Mon–Sat, closed Sunday.", q:"The Kinnebrew Company 208 W Lamar St Americus GA"},
+ {name:"Fox and Fowler", meta:"109 N Jackson St", blurb:"Home decor, Matouk linens, Antica Farmacista fragrances, and European children's toys and books.", q:"Fox and Fowler 109 N Jackson St Americus GA"},
+ {name:"Topiaries Home & Garden", meta:"209 N Jackson St", blurb:"China, candles, chandeliers, plants, and Charleston bed swings.", q:"Topiaries Home and Garden 209 N Jackson St Americus GA"},
+ {name:"Koinonia welcome center", meta:"Outside town", blurb:"Pecans and pecan treats, fair-trade coffee and chocolate. The best take-home gift in the county.", q:"Koinonia Farm Americus GA"},
+ {name:"More downtown shops", meta:"Lamar, Jackson, Forsyth", blurb:"The full directory of local stores. The Visitor Center at 101 W Lamar St has walking maps.", site:"https://www.downtownamericus.com/business-directory/wpbdp_category/retail-specialty-shops/", q:"shops downtown Americus GA"}
+];
+
+const NEEDS = [
+ {name:"Groceries", blurb:"Closest grocery stores.", q:"grocery store"},
+ {name:"Pharmacy", blurb:"Closest pharmacies, with hours.", q:"pharmacy"},
+ {name:"Gas", blurb:"Closest gas stations.", q:"gas station"},
+ {name:"Coffee right now", blurb:"Whatever's open near you.", q:"coffee"},
+ {name:"Takeout", blurb:"Restaurants open now.", q:"restaurants open now"},
+ {name:"ATM", blurb:"Closest cash machines.", q:"ATM"}
+];
+const HELP = [
+ {name:"Phoebe Sumter Medical Center", blurb:"The hospital in Americus, with an emergency room.", q:"Phoebe Sumter Medical Center Americus GA"},
+ {name:"Urgent care", blurb:"Walk-in clinics near the house.", q:"urgent care", near:true}
+];
+const TOUR = [
+ {src:"rooms/stairs.jpg", t:"The stair hall", c:"Original staircase, front door to landing"},
+ {src:"rooms/parlor.jpg", t:"Front parlor", c:"Bay windows and a carved mantel"},
+ {src:"rooms/dining.jpg", t:"Formal dining", c:"Seats the whole crew under the chandelier"},
+ {src:"rooms/nook.jpg", t:"Breakfast nook", c:"Original stained-glass windows"},
+ {src:"rooms/kitchen.jpg", t:"Kitchen", c:"Big island, gas stove, coffee ready"},
+ {src:"rooms/bed-bluegray.jpg", t:"Blue-gray bedroom", c:"Queen bed under the oval window"},
+ {src:"rooms/bed-teal.jpg", t:"Teal bedroom", c:"Queen bed and an antique mantel"},
+ {src:"rooms/bed-sage.jpg", t:"Sage bedroom", c:"Queen bed, soft and quiet"},
+ {src:"rooms/bed-taupe.jpg", t:"Taupe bedroom", c:"Queen bed with morning light"},
+ {src:"rooms/bed-gray.jpg", t:"Gray bedroom", c:"Queen bed and a leather sofa"},
+ {src:"rooms/landing.jpg", t:"Upstairs hall", c:"Heart pine floors, end to end"}
+];
+/* ================= END EASY EDIT ZONE ================= */
+const HOME="522+S+Lee+St+Americus+GA+31709";
+const maps=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+const dir=q=>"https://www.google.com/maps/dir/?api=1&origin="+HOME+"&destination="+encodeURIComponent(q);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+(function(){const T=document.getElementById("tour");TOUR.forEach(p=>{const f=document.createElement("figure");f.tabIndex=0;
+  f.innerHTML=`<img src="${esc(p.src)}" alt="${esc(p.t)}" loading="lazy"><figcaption><b>${esc(p.t)}</b>${esc(p.c)}</figcaption>`;
+  const open=()=>{const lb=document.createElement("div");lb.className="lightbox";lb.innerHTML=`<button type="button">Close</button><div><img src="${esc(p.src)}" alt="${esc(p.t)}"><p>${esc(p.t)}</p></div>`;
+    const close=()=>lb.remove();lb.onclick=e=>{if(e.target===lb||e.target.tagName==="BUTTON")close();};document.addEventListener("keydown",function k(e){if(e.key==="Escape"){close();document.removeEventListener("keydown",k);}});document.body.appendChild(lb);lb.querySelector("button").focus();};
+  f.onclick=open;f.onkeydown=e=>{if(e.key==="Enter")open();};T.appendChild(f);});})();
+
+function card(p,o={}){
+  const near=o.near?" near 522 S Lee St Americus GA":"";
+  const el=document.createElement("article"); el.className="place"; el.dataset.kind=p.kind||"";
+  let h=`<div class="top"><h3>${esc(p.name)}</h3>${p.meta?`<span class="meta">${esc(p.meta)}</span>`:""}</div><p>${esc(p.blurb)}</p>`;
+  if(p.order) h+=`<p class="order">${p.order}</p>`;          /* order lines are trusted, hand-written text with <b> */
+  if(p.host) h+=`<p class="host">${esc(p.host)}</p>`;
+  if(p.heads) h+=`<p class="heads">${esc(p.heads)}</p>`;
+  h+=`<div class="links">`;
+  if(p.menu) h+=`<a class="menu" href="${esc(p.menu)}" target="_blank" rel="noopener">Menu</a>`;
+  h+=`<a href="${maps(p.q+near)}" target="_blank" rel="noopener">Maps</a>`;
+  if(!o.near) h+=`<a href="${dir(p.q)}" target="_blank" rel="noopener">Directions</a>`;
+  if(p.site) h+=`<a href="${esc(p.site)}" target="_blank" rel="noopener">Website</a>`;
+  el.innerHTML=h+`</div>`; return el;
+}
+const fill=(id,arr,o)=>{const b=document.getElementById(id);arr.forEach(p=>b.appendChild(card(p,o)));};
+function filt(id,listId,arr){
+  const f=document.getElementById(id),L=document.getElementById(listId);
+  ["All",...new Set(arr.map(a=>a.kind))].forEach((k,i)=>{const b=document.createElement("button");b.type="button";b.textContent=k;b.setAttribute("aria-pressed",i===0);
+    b.onclick=()=>{f.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));L.querySelectorAll(".place").forEach(c=>c.hidden=!(k==="All"||c.dataset.kind===k));};f.appendChild(b);});
+}
+fill("eatL",EAT); filt("eatF","eatL",EAT);
+fill("nightL",NIGHT); fill("doL",DO); filt("doF","doL",DO);
+fill("shopL",SHOP); fill("needL",NEEDS,{near:true});
+const hb=document.getElementById("helpL"); HELP.forEach(p=>hb.appendChild(card(p,{near:!!p.near})));
+
+/* events: hide past */
+(function(){
+  const today=new Date(); today.setHours(0,0,0,0);
+  const L=document.getElementById("evL"); const M=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+  const up=EVENTS.filter(e=>new Date(e.d+"T23:59:00")>=today).sort((a,b)=>a.d.localeCompare(b.d)).slice(0,10);
+  if(!up.length){L.innerHTML=`<p class="lede">Nothing listed right now. Check the live calendars below.</p>`;}
+  up.forEach(e=>{const dt=new Date(e.d+"T12:00:00");const r=document.createElement("div");r.className="ev";
+    r.innerHTML=`<div class="d"><span>${M[dt.getMonth()]}</span><b>${dt.getDate()}</b></div><div><h3>${esc(e.t)}</h3><p>${esc(e.v)}</p><a href="${esc(e.u)}" target="_blank" rel="noopener">Details</a></div>`;L.appendChild(r);});
+  const C=document.getElementById("calL"); CALENDARS.forEach(c=>{const a=document.createElement("a");a.href=c.u;a.target="_blank";a.rel="noopener";a.textContent=c.n;C.appendChild(a);});
+})();
+
+/* history */
+(function(){const L=document.getElementById("histL");HISTORY.forEach(h=>{const d=document.createElement("div");d.className="era";
+  d.innerHTML=`<span class="yr">${esc(h.yr)}</span>${h.legend?'<span class="tag legend">LOCAL LEGEND</span>':""}<h3>${esc(h.t)}</h3><p>${esc(h.x)}</p>`;L.appendChild(d);});})();
+
+/* wifi */
+if(WIFI.name){const w=document.getElementById("wifiBox");w.hidden=false;w.textContent=`Network: ${WIFI.name}   Password: ${WIFI.password}`;}
+
+/* copy address */
+document.getElementById("copyAddr").onclick=async e=>{const t=document.getElementById("addr").textContent;
+  try{await navigator.clipboard.writeText(t);e.target.textContent="Copied";}
+  catch(_){const r=document.createRange();r.selectNodeContents(document.getElementById("addr"));const s=getSelection();s.removeAllRanges();s.addRange(r);e.target.textContent="Selected";}
+  setTimeout(()=>e.target.textContent="Copy address",1800);};
+
+/* checkout */
+const boxes=[...document.querySelectorAll("#checklist input")];
+const save=()=>{try{localStorage.setItem("gl-checkout",JSON.stringify(boxes.map(b=>b.checked)))}catch(_){}};
+const paint=()=>{const n=boxes.filter(b=>b.checked).length;document.getElementById("bar").style.width=(n/boxes.length*100)+"%";document.getElementById("count").textContent=`${n} of ${boxes.length}`;document.getElementById("done").classList.toggle("show",n===boxes.length);};
+try{const s=JSON.parse(localStorage.getItem("gl-checkout")||"[]");boxes.forEach((b,i)=>b.checked=!!s[i]);}catch(_){}
+boxes.forEach(b=>b.addEventListener("change",()=>{save();paint();}));paint();
+
+/* highlight current chapter in the nav */
+(function(){const links=[...document.querySelectorAll("nav.toc a")];const map=new Map(links.map(a=>[a.getAttribute("href").slice(1),a]));
+  if(!("IntersectionObserver" in window))return;
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){links.forEach(l=>l.classList.remove("on"));const a=map.get(en.target.id);if(a){a.classList.add("on");a.scrollIntoView({block:"nearest",inline:"center"});}}});},{rootMargin:"-40% 0px -55% 0px"});
+  document.querySelectorAll("main section[id]").forEach(s=>io.observe(s));})();
+</script>
+
+</body></html>
