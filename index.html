@@ -416,7 +416,7 @@ footer .sig{font:italic 500 24px/1.3 var(--serif);color:var(--on-band)}
 </div></section>
 
 <section id="events"><div class="wrap">
-  <span class="kicker">CHAPTER SEVEN · UPDATED WEEKLY</span>
+  <span class="kicker">CHAPTER SEVEN · UPDATED NOV 23</span>
   <h2>Happening around town</h2>
   <p class="lede">Past events drop off this list automatically. Always confirm times on the event's own page.</p>
   <div class="events" id="evL"></div>
@@ -501,7 +501,7 @@ footer .sig{font:italic 500 24px/1.3 var(--serif);color:var(--on-band)}
 <script>
 /* ================= EASY EDIT ZONE =================
    host: your own words (shown as "Hosts' take").  order: what reviewers say to get.
-   menu: menu link.  q: what to search in Google Maps.  Events: date as YYYY-MM-DD (past ones hide themselves). */
+   menu: menu link.  q: what to search in Google Maps.  Events: date as YYYY-MM-DD (past ones hide themselves). Optional end: last day, if it runs longer. */
 const WIFI = { name:"Grey Lady", password:"Haveaniceday!" };
 
 /* CONTACT: phone shows Call + Text buttons for guests. Leave "" to hide them. */
@@ -544,33 +544,24 @@ const NIGHT = [
 ];
 
 const EVENTS = [
- {d:"2026-11-06", t:"First Friday: Downtown Tailgate & Bar Fight", v:"Downtown Americus · 5–8 pm", u:"https://www.downtownamericus.com/events/"},
- {d:"2026-11-07", t:"SAM Shortline Wine and Cheese Train", v:"Departs Georgia Veterans State Park", u:"https://www.samshortline.com/wine-and-cheese-train"},
- {d:"2026-11-07", t:"Georgia Sugar Cane Festival", v:"Leslie Civic Center, 173 Allen St, Leslie · all day", u:"https://visitamericusga.com/local-area-events/"},
- {d:"2026-11-07", t:"WWI & WWII commemorative weekend", v:"Andersonville National Historic Site · Nov 7–8", u:"https://visitamericusga.com/local-area-events/"},
- {d:"2026-11-11", t:"Veterans Day ceremony + parade", v:"Ceremony 10 am at the Sumter County Courthouse · parade 6 pm in Americus", u:"https://visitamericusga.com/local-area-events/"},
- {d:"2026-11-13", t:"Jason Crabb in concert", v:"Rylander Theatre · GRAMMY and Dove Award-winning gospel singer", u:"https://www.rylander.org/"},
- {d:"2026-11-14", t:"Cordele Railfan Festival train rides", v:"Downtown Cordele · 1-hour round trips on the SAM Shortline", u:"https://www.samshortline.com/"},
- {d:"2026-11-17", t:"GSW Hurricane Holiday Fest", v:"Georgia Southwestern campus · open to the public · free hot chocolate, Santa photos · time TBA", u:"https://visitamericusga.com/local-area-events/"},
- {d:"2026-11-19", t:"Holiday Open House + tree lighting", v:"Downtown · shops open 5–8 pm · Santa photos · the big tree at Rylander Park lights at 8 pm", u:"https://www.downtownamericus.com/events/"},
- {d:"2026-11-19", t:"Hot glass workshop: flameworked beads", v:"Mobile Glassblowing Studios, 505 W Lamar St · 6–8 pm · $69 · ages 13+", u:"https://visitamericusga.com/local-area-events/"},
- {d:"2026-11-21", t:"Hot glass workshop: mini turtles", v:"Mobile Glassblowing Studios, 505 W Lamar St · 10 am–1 pm · $99", u:"https://visitamericusga.com/local-area-events/"},
- {d:"2026-11-20", t:"Fabulous Feet Dance Studio show", v:"Rylander Theatre · Nov 20–22", u:"https://www.rylander.org/"},
- {d:"2026-11-27", t:"Shop Small Weekend", v:"Downtown shops · Nov 27–28 · 8 am–2 pm, extended store hours", u:"https://www.downtownamericus.com/events/"},
- {d:"2026-11-21", t:"Murder Mystery Dinner Train", v:"Departs Americus Depot, 329 S Jackson St · boarding 5 pm, departs 5:30 pm", u:"https://www.samshortline.com/murdermysterdinnertrain"},
+ {d:"2026-11-27", end:"2026-11-28", t:"Shop Small Weekend", v:"Downtown shops · Nov 27–28 · 8 am–2 pm, extended store hours", u:"https://www.downtownamericus.com/events/"},
  {d:"2026-11-28", t:"Plains Christmas Lighting train (Santa aboard)", v:"Americus flag stop 5:15 pm · 2-hour layover in Plains", u:"https://www.samshortline.com/plainschristmaslighting"},
  {d:"2026-11-30", t:"Photos with Santa", v:"The Windsor Hotel (enter through Little Brother's Bistro) · 5:30–7:30 pm · hosted by Americus Rotary", u:"https://visitamericusga.com/local-area-events/"},
  {d:"2026-12-03", t:"Americus Christmas Parade", v:"Downtown, Forsyth St to Lamar St · 7 pm · 70+ entries", u:"https://www.downtownamericus.com/events/"},
  {d:"2026-12-04", t:"First Friday downtown", v:"Downtown Americus · 5–8 pm", u:"https://www.downtownamericus.com/events/"},
- {d:"2026-12-04", t:"SAM Shortline Candy Cane Express", v:"SAM Shortline excursion train · Dec 4–5 · see site for times and boarding", u:"https://www.samshortline.com/candycaneexpress"},
- {d:"2026-12-11", t:"Cordele Holiday Train", v:"SAM Shortline, from Cordele · Dec 11, 12, 18 and 19 · see site for times", u:"https://www.samshortline.com/cordeleholidaytrain"},
- {d:"2026-12-12", t:"Downtown Sidewalk Sale", v:"Downtown shops · 10 am–2 pm", u:"https://www.downtownamericus.com/events/"},
+ {d:"2026-12-04", end:"2026-12-05", t:"SAM Shortline Candy Cane Express", v:"Georgia Veterans State Park to Plains · Dec 4–5 · departs 10 am · Santa aboard · 2-hour layover", u:"https://www.samshortline.com/candycaneexpress"},
+ {d:"2026-12-05", t:"Antioch Southern Gospel", v:"Rylander Theatre · 3 pm · free · bracelets from Nov 24, first come", u:"https://visitamericusga.com/local-area-events/"},
  {d:"2026-12-05", t:"Blow your own glass ornament", v:"Mobile Glassblowing Studios, 505 W Lamar St · 9 am–1 pm · 15-min slots, $42 · ages 6+", u:"https://www.mgbsgallery.square.site"},
- {d:"2026-12-06", t:"Handel's Messiah (free)", v:"First Methodist, 200 S Lee St, up the street · 5 pm", u:"https://visitamericusga.com/local-area-events/"},
- {d:"2026-12-10", t:"Sumter Players: It's a Wonderful Life", v:"Dec 10–12 at 7 pm, Dec 13 at 2:30 pm", u:"https://www.sumterplayers.org/thisseason"},
+ {d:"2026-12-06", t:"Handel's Messiah (free)", v:"First Methodist, 200 S Lee St, up the street · 5 pm · GSW choir and Albany Symphony", u:"https://visitamericusga.com/local-area-events/"},
+ {d:"2026-12-10", end:"2026-12-13", t:"Sumter Players: It's a Wonderful Life", v:"Rylander Theatre · Dec 10–12 at 7 pm, Dec 13 at 2:30 pm", u:"https://www.sumterplayers.org/thisseason"},
+ {d:"2026-12-11", t:"GSW fall graduation", v:"Storm Dome, Georgia Southwestern · 11 am and 2:30 pm · guests welcome", u:"https://www.gsw.edu/graduation/"},
+ {d:"2026-12-11", end:"2026-12-19", t:"Cordele Holiday Train", v:"Downtown Cordele depot · Dec 11–12 and 18–19 · 1-hour ride · Santa aboard · see site for times", u:"https://www.samshortline.com/cordeleholidaytrain"},
+ {d:"2026-12-12", t:"Downtown Sidewalk Sale", v:"Downtown shops · 10 am–2 pm", u:"https://www.downtownamericus.com/events/"},
  {d:"2026-12-19", t:"Wreaths Across America", v:"Andersonville National Historic Site, the Rostrum · noon", u:"https://visitamericusga.com/local-area-events/"},
+ {d:"2026-12-31", t:"New Year's Eve: A Gilded Evening", v:"The Windsor Hotel · 7 pm–midnight · dinner $79 · Palace Jesters, reservations required", u:"https://visitamericusga.com/local-area-events/"},
+ {d:"2027-01-26", t:"Chamber concert: David and Goliath", v:"Jackson Performance Hall, Georgia Southwestern · 7:30 pm · violin and bass · $12, free under 12", u:"https://www.gsw.edu/community/events"},
  {d:"2027-02-05", t:"First Friday downtown (confirm)", v:"Downtown Americus", u:"https://www.downtownamericus.com/events/"},
- {d:"2027-03-11", t:"Sumter Players: Hairspray", v:"Mar 11–13 at 7 pm, Mar 14 at 2:30 pm", u:"https://www.sumterplayers.org/thisseason"}
+ {d:"2027-03-11", end:"2027-03-14", t:"Sumter Players: Hairspray", v:"Mar 11–13 at 7 pm, Mar 14 at 2:30 pm", u:"https://www.sumterplayers.org/thisseason"}
 ];
 const CALENDARS = [
  {n:"Rylander Theatre", u:"https://www.rylander.org/"},
@@ -692,10 +683,10 @@ const hb=document.getElementById("helpL"); HELP.forEach(p=>hb.appendChild(card(p
 (function(){
   const today=new Date(); today.setHours(0,0,0,0);
   const L=document.getElementById("evL"); const M=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
-  const up=EVENTS.filter(e=>new Date(e.d+"T23:59:00")>=today).sort((a,b)=>a.d.localeCompare(b.d)).slice(0,10);
+  const up=EVENTS.filter(e=>new Date((e.end||e.d)+"T23:59:00")>=today).sort((a,b)=>a.d.localeCompare(b.d));
   if(!up.length){L.innerHTML=`<p class="lede">Nothing listed right now. Check the live calendars below.</p>`;}
   up.forEach(e=>{const dt=new Date(e.d+"T12:00:00");const r=document.createElement("div");r.className="ev";
-    const days=Math.round((dt-today)/864e5);const soon=days<=0?"TODAY":days===1?"TOMORROW":days<7?"THIS WEEK":"";
+    const days=Math.round((dt-today)/864e5);const soon=days===0?"TODAY":days===1?"TOMORROW":days>1&&days<7?"THIS WEEK":"";
     r.innerHTML=`<div class="d"><span>${M[dt.getMonth()]}</span><b>${dt.getDate()}</b></div><div><h3>${esc(e.t)}${soon?`<span class="soon">${soon}</span>`:""}</h3><p>${esc(e.v)}</p><a href="${esc(e.u)}" target="_blank" rel="noopener">Details</a></div>`;L.appendChild(r);});
   const C=document.getElementById("calL"); CALENDARS.forEach(c=>{const a=document.createElement("a");a.href=c.u;a.target="_blank";a.rel="noopener";a.textContent=c.n;C.appendChild(a);});
 })();
